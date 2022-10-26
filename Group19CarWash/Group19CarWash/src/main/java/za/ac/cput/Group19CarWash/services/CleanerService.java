@@ -1,6 +1,7 @@
 package za.ac.cput.Group19CarWash.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import za.ac.cput.Group19CarWash.domain.Cleaner;
 import za.ac.cput.Group19CarWash.exception.CleanerNotFoundException;
 import za.ac.cput.Group19CarWash.repository.cleaner.ICleanerRepository;
@@ -8,6 +9,7 @@ import za.ac.cput.Group19CarWash.repository.cleaner.ICleanerRepository;
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class CleanerService {
 
     private static ICleanerRepository iCleanerRepository;

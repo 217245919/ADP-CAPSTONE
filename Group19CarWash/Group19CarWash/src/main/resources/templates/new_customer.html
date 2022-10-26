@@ -88,7 +88,7 @@ Lyle Haines (217245919)
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center w3-blue">
     <!-- Avatar image in top left corner -->
-    <a href="#" class="w3-bar-item w3-button  w3-hover-light-blue" th:href="@{/}">
+    <a href="#" class="w3-bar-item w3-button  w3-hover-light-blue">
         <i class="fa fa-home w3-xxlarge"></i>
         <p>HOME</p>
     </a>
@@ -102,7 +102,7 @@ Lyle Haines (217245919)
         MANAGE<i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
-        <a class="w3-bar-item w3-button w3-hover-light-blue" th:href="@{/customer}">
+        <a class="w3-bar-item w3-button w3-light-blue" th:href="@{/customer}">
             <p>MANAGE CUSTOMERS</p>
         </a>
         <a class="w3-bar-item w3-button w3-hover-light-blue" th:href="@{/bookings}">
@@ -114,11 +114,24 @@ Lyle Haines (217245919)
         <a class="w3-bar-item w3-button w3-hover-light-blue" th:href="@{/car}">
             <p>MANAGE CAR</p>
         </a>
+        <a class="w3-bar-item w3-button w3-hover-light-blue" th:href="@{/administrator}">
+            <p>MANAGE ADMINISTRATORS</p>
+        </a>
+        <a class="w3-bar-item w3-button w3-hover-light-blue" th:href="@{/services}">
+            <p>MANAGE SERVICES</p>
+        </a>
+        <a class="w3-bar-item w3-button w3-padding-large w3-hover-light-blue" th:href="@{/carDelivery}">
+            <p>MANAGE CAR DELIVERIES</p>
+        </a>
     </div>
     <a class="w3-bar-item w3-button w3-hover-light-blue">
         <i class="fa fa-sign-out w3-xxlarge"></i>
         <p><form th:action="@{/logout}" method="post"><input type="submit" value="Logout" /></form></p>
     </a>
+    <!--a class="w3-bar-item w3-button w3-padding-large w3-hover-black" href="new">
+        <i class="fa fa-user w3-xxlarge"></i>
+        <p>ADD LOCATION</p>
+    </a-->
     <!--a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
         <i class="fa fa-eye w3-xxlarge"></i>
         <p>PHOTOS</p>
