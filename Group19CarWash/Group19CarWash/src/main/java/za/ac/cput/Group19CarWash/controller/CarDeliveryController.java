@@ -1,5 +1,10 @@
 package za.ac.cput.Group19CarWash.controller;
 
+/*
+    CarDelivery
+    Mogammad-Redar Behardien 216234107
+    10 April 2022
+ */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -9,7 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import za.ac.cput.Group19CarWash.domain.CarDelivery;
 import za.ac.cput.Group19CarWash.services.CarDeliveryService;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -40,6 +46,12 @@ public class CarDeliveryController {
         carDeliveryService.addCarDelivery(carDelivery);
 
         return "redirect:/carDelivery";
+    }
+
+    @GetMapping(value = "/findCarDelivery/{id}")
+    public ResponseEntity<CarDelivery> getCarDeliveryById(@PathVariable("id") Long id) {
+        CarDelivery carDelivery = carDeliveryService.findCarDeliveryById(id);
+        return new ResponseEntity<>(carDelivery, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/editCarDelivery/{id}")

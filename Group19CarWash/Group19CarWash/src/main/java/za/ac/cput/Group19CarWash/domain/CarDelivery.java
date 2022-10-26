@@ -135,6 +135,11 @@ public class CarDelivery implements Serializable {
             return this;
         }
 
+        public Builder setCarDelivId(String carDelivId) {
+            this.carDelivId = carDelivId;
+            return this;
+        }
+
         public Builder copy(CarDelivery cDelivery) {
             this.id = cDelivery.id;
 
