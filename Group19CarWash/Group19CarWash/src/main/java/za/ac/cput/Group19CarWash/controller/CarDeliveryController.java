@@ -1,5 +1,10 @@
 package za.ac.cput.Group19CarWash.controller;
 
+/*
+    CarDelivery
+    Mogammad-Redar Behardien 216234107
+    10 April 2022
+ */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -14,8 +19,8 @@ import org.springframework.http.ResponseEntity;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@RestController
-@RequestMapping
+@Transactional
+@Controller
 public class CarDeliveryController {
     @Autowired
     private CarDeliveryService carDeliveryService;
@@ -58,7 +63,7 @@ public class CarDeliveryController {
         return editing;
     }
 
-    @DeleteMapping(value = "/deleteCarDelivery/{id}")
+    @RequestMapping(value = "/deleteCarDelivery/{id}")
     public String deleteMyCarDelivery(@PathVariable(name = "id") Long id) {
         carDeliveryService.deleteCarDelivery(id);
 
