@@ -1,5 +1,9 @@
 package za.ac.cput.Group19CarWash.repository.upholstery;
 
+/*
+    Wajedien Samuels (216287820)
+ */
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import za.ac.cput.Group19CarWash.domain.Upholstery;
 

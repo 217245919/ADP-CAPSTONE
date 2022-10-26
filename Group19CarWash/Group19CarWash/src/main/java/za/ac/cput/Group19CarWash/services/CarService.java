@@ -1,5 +1,9 @@
 package za.ac.cput.Group19CarWash.services;
 
+/*
+    Wajedien Samuels (216287820)
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.Group19CarWash.domain.Car;

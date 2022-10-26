@@ -1,5 +1,9 @@
 package za.ac.cput.Group19CarWash.repository.upholstery.impl;
 
+/*
+    Wajedien Samuels (216287820)
+ */
+
 import za.ac.cput.Group19CarWash.domain.Upholstery;
 
 import java.util.ArrayList;

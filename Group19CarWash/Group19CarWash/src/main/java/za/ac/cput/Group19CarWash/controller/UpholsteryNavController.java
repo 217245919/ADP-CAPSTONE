@@ -1,5 +1,9 @@
 package za.ac.cput.Group19CarWash.controller;
 
+/*
+    Wajedien Samuels (216287820)
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
