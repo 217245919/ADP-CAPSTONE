@@ -33,7 +33,7 @@ public class AdministratorController {
     @RequestMapping(value = "/saveadministrator", method = RequestMethod.POST)
     public String saveAdministrator(@ModelAttribute("administrator") Administrator administrator) {
         administratorService.addAdministrator(administrator);
-        return "administrator";
+        return "redirect:/administrator";
     }
     @RequestMapping(value = "/editadministrator/{id}")
     public ModelAndView showEditAdministrator(@PathVariable(name = "id") Long id) {

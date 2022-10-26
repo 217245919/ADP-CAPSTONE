@@ -96,8 +96,8 @@ public class Services implements Serializable {
     public String toString() {
         return "Services{" +
                 "Id=" + id +
-                "serviceId=" + servicesId +
-                ", servicePkg='" + servicesPkg + '\'' +
+                "servicesId=" + servicesId +
+                ", servicesPkg='" + servicesPkg + '\'' +
                 ", washTypeId='" + washTypeId + '\'' +
                 ", upholsteryId='" + upholsteryId + '\'' +
                 ", customerId='" + customerId + '\'' +
