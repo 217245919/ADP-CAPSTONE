@@ -34,9 +34,10 @@ public class AdministratorRepositoryIMPL {
         }
         return null;
     }
-    public void delete(String a){
+    public boolean delete(String a){
         Administrator administrator = read(a);
         if (administrator != null) this.AdministratorList.remove(administrator);
+        return false;
     }
 
     public List<Administrator> findAll(){return this.AdministratorList;}
