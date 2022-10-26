@@ -1,7 +1,8 @@
-package za.ac.cput.Group19CarWash.factory;
+package za.ac.cput.Group19CarWash.factory.bookings;
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.Group19CarWash.domain.Bookings;
+import za.ac.cput.Group19CarWash.factory.BookingsFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

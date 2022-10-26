@@ -5,7 +5,7 @@ DD: Oct 2022
 BookingsRepoIMPL.java
 **************** DO NOT TOUCH ********************
  */
-package za.ac.cput.Group19CarWash.repository.bookings.impl;
+package za.ac.cput.Group19CarWash.repository;
 
 import za.ac.cput.Group19CarWash.domain.Bookings;
 

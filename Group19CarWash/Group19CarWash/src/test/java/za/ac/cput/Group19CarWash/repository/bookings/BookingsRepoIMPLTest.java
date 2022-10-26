@@ -1,4 +1,4 @@
-package za.ac.cput.Group19CarWash.repository.bookings.impl;
+package za.ac.cput.Group19CarWash.repository.bookings;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -6,6 +6,8 @@ import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.Group19CarWash.domain.Bookings;
 import za.ac.cput.Group19CarWash.factory.BookingsFactory;
 import org.junit.jupiter.api.MethodOrderer;
+import za.ac.cput.Group19CarWash.repository.BookingsRepoIMPL;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 

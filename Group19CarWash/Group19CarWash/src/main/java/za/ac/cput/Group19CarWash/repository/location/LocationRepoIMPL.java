@@ -5,9 +5,8 @@ DD: Oct 2022
 LocationRepoIMPL.java
 **************** DO NOT TOUCH ********************
  */
-package za.ac.cput.Group19CarWash.repository.location.impl;
+package za.ac.cput.Group19CarWash.repository.location;
 import za.ac.cput.Group19CarWash.domain.Location;
-import za.ac.cput.Group19CarWash.repository.bookings.impl.BookingsRepoIMPL;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +40,11 @@ public class LocationRepoIMPL {
         }
         return null;
     }
-    public void delete(String a){
+    //public boolean return false
+    public boolean delete(String a){
         Location location = read(a);
         if (location != null) this.LocationList.remove(location);
+        return false;
     }
 
     public List<Location> findAll(){return this.LocationList;}
