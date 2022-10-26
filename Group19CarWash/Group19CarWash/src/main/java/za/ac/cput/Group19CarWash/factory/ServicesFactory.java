@@ -4,10 +4,9 @@ import za.ac.cput.Group19CarWash.domain.Services;
 
 public class ServicesFactory {
 
-    public static Services createServices(Long id, String servicesId, String servicesPkg, String washTypeId, String upholsteryId, String customerId, String cleanerId, String totalAmount) {
+    public static Services createServices(String servicesId, String servicesPkg, String washTypeId, String upholsteryId, String customerId, String cleanerId, String totalAmount) {
 
         Services services = new Services.Builder()
-                .setId(id)
                 .setServicesId(servicesId)
                 .setServicesPkg(servicesPkg)
                 .setWashTypeId(washTypeId)

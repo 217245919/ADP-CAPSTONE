@@ -35,9 +35,10 @@ public class ServicesRepositoryIMPL {
         }
         return null;
     }
-    public void delete(String a){
+    public boolean delete(String a){
         Services services = read(a);
         if (services != null) this.ServicesList.remove(services);
+        return false;
     }
 
     public List<Services> findAll(){return this.ServicesList;}
