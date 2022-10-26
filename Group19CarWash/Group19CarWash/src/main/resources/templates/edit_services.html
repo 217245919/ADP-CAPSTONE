@@ -154,23 +154,30 @@
                 <form action="#" th:action="@{/saveservices}" th:object="${services}" method="post">
                     <table class="tform">
                         <tr>
-                            <td>Services Package:</td>
-                            <td><input type="text" id="servicesid" name="servicesid" required th:field="*{servicesId}"/>
+                            <td>Services ID:</td>
+                            <td><input type="text" readonly id="servicesid" name="servicesid" required th:field="*{servicesId}"/>
                             </td>
                         </tr>
                         <tr>
                             <td>Services Package:</td>
-                            <td><input type="text" id="servicespkg" name="servicespkg" required th:field="*{servicesPkg}"/>
+                            <td>
+                                <div class="custom-select" style="width:200px;">
+                                    <select th:field="*{servicesPkg}" onclick="servPack(this.value)">
+                                        <option value="Full Package">Full Package</option>
+                                        <option value="Wash Package">Wash Package</option>
+                                        <option value="Upholstery Package">Upholstery Package</option>
+                                    </select>
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td>WashType ID:</td>
-                            <td><input type="text" id="washtypeid" name="washtypeid" required th:field="*{washTypeId}"/>
+                            <td><input type="text" readonly id="washtypeid" name="washtypeid" required th:field="*{washTypeId}"/>
                             </td>
                         </tr>
                         <tr>
                             <td>Upholstery ID:</td>
-                            <td><input type="text" id="upholsteryid" name="upholsteryid" required th:field="*{upholsteryid}"/>
+                            <td><input type="text" readonly id="upholsteryid" name="upholsteryid" required th:field="*{upholsteryId}"/>
                         </tr>
                         <tr>
                             <td>Customer ID:</td>
@@ -182,7 +189,7 @@
                         </tr>
                         <tr>
                             <td>Total Amount:</td>
-                            <td><input type="text" id="totalamount" name="totalamount" required th:field="*{totalAmount}"/></td>
+                            <td><input type="text" readonly id="totalamount" name="totalamount" required th:field="*{totalAmount}"/></td>
                         </tr>
                         <tr>
                             <td colspan="2"><button class="fbtn" type="submit" align="center">Add</button></td>
@@ -218,6 +225,26 @@
             }
         });
     }
+
+    function servPack(editPack) {
+        if (editPack == "Full Package")
+        {
+            document.getElementById("totalamount").value="R400"
+            document.getElementById("washtypeid").value="1"
+            document.getElementById("upholsteryid").value="1"
+        }
+        else if (editPack == "Wash Package") {
+            document.getElementById("totalamount").value="R150"
+            document.getElementById("washtypeid").value="1"
+            document.getElementById("upholsteryid").value="0"
+        }
+        else if (editPack == "Upholstery Package") {
+            document.getElementById("totalamount").value="R250"
+            document.getElementById("washtypeid").value="0"
+            document.getElementById("upholsteryid").value="1"
+        }
+    }
+
 </script>
 
 </body>
