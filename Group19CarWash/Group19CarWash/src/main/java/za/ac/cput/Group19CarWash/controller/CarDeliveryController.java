@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import za.ac.cput.Group19CarWash.domain.CarDelivery;
 import za.ac.cput.Group19CarWash.services.CarDeliveryService;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@Transactional
-@Controller
+@RestController
+@RequestMapping
 public class CarDeliveryController {
     @Autowired
     private CarDeliveryService carDeliveryService;
@@ -42,6 +43,12 @@ public class CarDeliveryController {
         return "redirect:/carDelivery";
     }
 
+    @GetMapping(value = "/findCarDelivery/{id}")
+    public ResponseEntity<CarDelivery> getCarDeliveryById(@PathVariable("id") Long id) {
+        CarDelivery carDelivery = carDeliveryService.findCarDeliveryById(id);
+        return new ResponseEntity<>(carDelivery, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/editCarDelivery/{id}")
     public ModelAndView showEditCarDelivery(@PathVariable(name = "id") Long id) {
         ModelAndView editing = new ModelAndView("edit_carDelivery");
@@ -51,7 +58,7 @@ public class CarDeliveryController {
         return editing;
     }
 
-    @RequestMapping(value = "/deleteCarDelivery/{id}")
+    @DeleteMapping(value = "/deleteCarDelivery/{id}")
     public String deleteMyCarDelivery(@PathVariable(name = "id") Long id) {
         carDeliveryService.deleteCarDelivery(id);
 

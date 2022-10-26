@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,72 +9,105 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
     body, h1,h2,h3,h4,h5,h6 {
-      font-family: "Montserrat", sans-serif
+        font-family: "Montserrat", sans-serif
     }
 
     .w3-row-padding img {
-       margin-bottom: 12px
+        margin-bottom: 12px
     }
 
     /* Set the width of the sidebar to 120px */
     .w3-sidebar {
-      width: 120px;background: #222;
+        width: 120px;
+        background: #222;
     }
 
     /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
     #main {
-      margin-left: 120px;
+        margin-left: 120px;
+    }
+
+    .gobtn {
+        padding: 10px 10px;
+        font-size: 15px;
+        text_decoration: none;
+        cursor: pointer;
+        outline: none;
+        background-color: dodgerblue;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px #999;
+        float: right;
+        margin-bottom: 20px;
+    }
+
+    .gobtn:hover {
+        background-color: aliceblue;
+    }
+
+    .gobtn:active {
+      background-color: dodgerblue;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+
+    .tformat td, .tformat th {
+
+       padding: 8px;
+    }
+
+    .tformat tr:nth-child(even){
+        background-color: gainsboro;
+    }
+
+    .tformat tr:nth-hover{
+        background-color: #cc6600;
+    }
+
+    .tformat th {
+        text-align: left;
+        background-color: dodgerblue;
+    }
+
+    .ebtn {
+        padding: 5px 9px;
+        font-size: 12px;
+        cursor: pointer;
+        background-color: gold;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px #999;
+    }
+
+    .dbtn {
+        padding: 5px 9px;
+        font-size: 12px;
+        cursor: pointer;
+        background-color: tomato;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px #999;
+    }
+
+    .ebtn:hover {
+        background-color: goldenrod;
+    }
+
+    .dbtn:hover {
+        background-color: orangered;
+    }
+
+    #footer{
+
+        left: 0;
+        bottom: 0;
+
     }
 
     /* Remove margins from "page content" on small screens */
     @media only screen and (max-width: 600px) {
       #main {margin-left: 0}
     }
-
-    .card {
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      width: 35%;
-      padding: 8px;
-      background-color: #87CEEB;
-    }
-
-    .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
-
-    .tform td, .tform th {
-       padding: 8px;
-    }
-
-    .fbtn {
-        padding: 5px 15px;
-        font-size: 15px;
-        text-align: center;
-        cursor: pointer;
-        outline: none;
-        color: black;
-        background-color: aliceblue;
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 5px #999;
-    }
-
-    .fbtn:hover {
-        background-color: dodgerblue;
-    }
-
-    .fbtn:active {
-      background-color: dodgerblue;
-      box-shadow: 0 5px #666;
-      transform: translateY(4px);
-    }
-
-    #footer{
-        left: 0;
-        bottom: 0;
-    }
-
 </style>
 </head>
 <body>
@@ -122,75 +154,68 @@
         <i class="fa fa-sign-out w3-xxlarge"></i>
         <p><form th:action="@{/logout}" method="post"><input type="submit" value="Logout" /></form></p>
     </a>
-
 </nav>
-
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-        <a class="w3-bar-item w3-button" style="width:25% !important" th:href="@{/}">HOME</a>
+        <a class="w3-bar-item w3-button" style="width:25% " th:href="@{/}">HOME</a>
         <a class="w3-bar-item w3-button" style="width:25% !important" th:href="@{/bookings}">BOOKINGS</a>
-       
+        <!--a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+        <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a-->
     </div>
 </div>
-
-
 <!-- Page Content -->
 <div class="w3-padding-large" id="main">
-    <!-- Header/Home -->
     <header class="w3-container w3-padding-32 w3-center" id="home">
-    
-        <div align="center">
-            <h1>Edit Car Delivery</h1>
+        <div>
+        <h1>Manage Car Deliveries</h1>
+        </div>
+        <br>
+        <div class="gobtn">
+            <a href="newCarDelivery"> Add Car Delivery</a>
         </div>
     </header>
 
     <main>
-        <div align="center">
-            <div class="card">
-            <form action="#" th:action="@{/saveCarDelivery}" th:object="${carDelivery}" method="post">
-                <table class="tform">
+        <div class="tformat" align="center">
+            <table>
+                <thead>
                     <tr>
-                        <td>Car Delivery ID:</td>
-                        <td><input type="text" th:field="*{id}" readonly="readonly"/>
-                        </td>
+                        <th>ID</th>
+                        
+                        <th>CarDeliveryID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Customer ID</th>
+                        <th>Actions</th>
                     </tr>
-                    <tr>
-                        <td>Date:</td>
-                        <td><input type="date" id="dt1" name="dt1" th:field="*{date}"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Time:</td>
+                </thead>
+                <tbody>
+                    <tr th:each="carDelivery : ${carDeliveryList}">
+                        <td th:text="${carDelivery.id}">ID</td>
+                        <td th:text="${carDelivery.carDelivId}">CarDeliveryId</td>
+                        <td th:text="${carDelivery.date}">Date</td>
+                        <td th:text="${carDelivery.time}" >Time</td>
+                        <td th:text="${carDelivery.customerId}">CustomerId</td>
                         <td>
-                            <input type="time" id="apt" name="apt"
-                                   min="09:00" max="15:00" required th:field="*{time}"/>
+                            <a class="ebtn" th:href="@{'/editCarDelivery/'+${carDelivery.id}}">Edit</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="dbtn" th:href="@{'/deleteCarDelivery/'+${carDelivery.id}}">Delete</a>
                         </td>
                     </tr>
-                
-                    <tr>
-                        <td>CustomerID:</td>
-                        <td><input type="text" th:field="*{customerId}"/></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><button class="fbtn" type="submit" align="center">Save</button></td>
-                    </tr>
-                </table>
-
-            </form>
+                </tbody>
+            </table>
         </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer">
+        <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge" align="center">
+            <p class="w3-medium"> @Copyright Group19CapStone @2022 All Right Reserved.</p>
+            <!-- End footer -->
+        </footer>
     </div>
-</main>
-    
 
-
-<!-- Footer -->
-<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge" align="center">
-    <p class="w3-medium"> @Copyright Group19CapStone @2022 All Right Reserved.</p>
-    <!-- End footer -->
-</footer>
-
-<!-- END PAGE CONTENT -->
+    <!-- END PAGE CONTENT -->
 </div>
 <script>
     /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
