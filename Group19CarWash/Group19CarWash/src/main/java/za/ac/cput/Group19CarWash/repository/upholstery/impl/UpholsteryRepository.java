@@ -36,9 +36,10 @@ public class UpholsteryRepository {
         }
         return null;
     }
-    public void delete(String a){
+    public boolean delete(String a){
         Upholstery upholstery = read(a);
         if (upholstery != null) this.UpholsteryList.remove(upholstery);
+        return false;
     }
 
     public List<Upholstery> findAll(){return this.UpholsteryList;}

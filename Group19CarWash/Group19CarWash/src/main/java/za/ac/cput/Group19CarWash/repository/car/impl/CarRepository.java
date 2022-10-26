@@ -11,15 +11,17 @@ public class CarRepository {
 
     public static CarRepository CAR_REPOSITORY;
 
-    private CarRepository(){this.CarList=new ArrayList<>();
+    private CarRepository() {
+        this.CarList = new ArrayList<>();
     }
 
-    public static CarRepository getCarList(){
-        if(CAR_REPOSITORY == null)
+    public static CarRepository getCarList() {
+        if (CAR_REPOSITORY == null)
             CAR_REPOSITORY = new CarRepository();
         return CAR_REPOSITORY;
     }
-    public Car create(Car car){
+
+    public Car create(Car car) {
         this.CarList.add(car);
         return car;
     }
@@ -28,17 +30,19 @@ public class CarRepository {
         return this.CarList.stream().filter(g -> g.getCarRegId().equalsIgnoreCase(a)).findAny().orElse(null);
     }
 
-    public Car update(Car car){
+    public Car update(Car car) {
         Car a = read(car.getCarRegId());
-        if(a !=null){
+        if (a != null) {
             delete(a.getCarRegId());
             return create(car);
         }
         return null;
     }
-    public void delete(String a){
+
+    public boolean delete(String a) {
         Car car = read(a);
-        if (car !=null) this.CarList.remove(car);
+        if (car != null) this.CarList.remove(car);
+        return false;
     }
 
     public List<Car> findAll(){return this.CarList;}
