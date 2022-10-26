@@ -273,6 +273,64 @@ Lyle Haines (217245919)
                 </tr>
                 </tbody>
             </table>
+        <br>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CarRegId</th>
+                    <th>CarModel</th>
+                    <th>CarColour</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="car : ${carList}">
+                    <td th:text="${car.id}">ID</td>
+                    <td th:text="${car.carRegId}">CarRegId</td>
+                    <td th:text="${car.carModel}">CarModel</td>
+                    <td th:text="${car.carColour}" >CarColour</td>
+                    <td>
+                        <a class="ebtn" th:href="@{'/editcar/'+${car.id}}">Edit</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+                        <a class="dbtn" th:href="@{'/deletecar/'+${car.id}}">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        <br>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Services ID</th>
+                    <th>Services Package</th>
+                    <th>WashType ID</th>
+                    <th>Upholstery ID</th>
+                    <th>Customer ID</th>
+                    <th>Cleaner ID</th>
+                    <th>Total Amount</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="services : ${servicesList}">
+                    <td th:text="${services.id}">ID</td>
+                    <td th:text="${services.servicesId}">ServicesId</td>
+                    <td th:text="${services.servicesPkg}">ServicesPkg</td>
+                    <td th:text="${services.washTypeId}" >WashTypeId</td>
+                    <td th:text="${services.upholsteryId}">UpholsteryId</td>
+                    <td th:text="${services.customerId}">CustomerId</td>
+                    <td th:text="${services.cleanerId}">CleanerId</td>
+                    <td th:text="${services.totalAmount}">TotalAmount</td>
+                    <td>
+                        <a class="ebtn" th:href="@{'/editservices/'+${services.id}}">Edit</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+                        <a class="dbtn" th:href="@{'/deleteservices/'+${services.id}}">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </main>
 </div>

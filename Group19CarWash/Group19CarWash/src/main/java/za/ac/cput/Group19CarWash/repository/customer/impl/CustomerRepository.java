@@ -46,9 +46,10 @@ public class CustomerRepository {
         return null;
     }
 
-    public void delete(String a){
+    public boolean delete(String a){
         Customer customer = read(a);
         if (customer != null) this.CustomerList.remove(customer);
+        return false;
     }
 
     public List<Customer> findAll(){return this.CustomerList;}

@@ -45,9 +45,10 @@ public class PaymentRepository {
         return null;
     }
 
-    public void delete(String a){
+    public boolean delete(String a){
         Payment payment = read(a);
         if (payment != null) this.PaymentList.remove(payment);
+        return false;
     }
 
     public List<Payment> findAll(){return this.PaymentList;}
