@@ -20,7 +20,7 @@ public class ServicesController {
 
     @GetMapping(value = "/services")
     public String services(Model model) {
-        List<Services> servicesList = servicesService.findAllServices();
+        List<Services> servicesList = ServicesService.findAllServices();
         model.addAttribute("servicesList", servicesList);
         return "services";
     }
@@ -33,7 +33,7 @@ public class ServicesController {
     @RequestMapping(value = "/saveservices", method = RequestMethod.POST)
     public String saveservices(@ModelAttribute("services") Services services) {
         servicesService.addServices(services);
-        return "services";
+        return "redirect:/services";
     }
     @RequestMapping(value = "/editservices/{id}")
     public ModelAndView showEditservices(@PathVariable(name = "id") Long id) {
