@@ -33,14 +33,6 @@ public class CarDeliveryRepositoryIMPL {// } implements ICarDeliveryRepository {
         return carDelivery;
     }
 
-    public CarDelivery save(CarDelivery carDelivery) {
-        boolean deliver = deliveries.add(carDelivery);
-        if (!deliver) {
-            return null;
-        }
-        return carDelivery;
-    }
-
     // @Override
     public CarDelivery read(String i) {
         return deliveries.stream()
@@ -58,11 +50,12 @@ public class CarDeliveryRepositoryIMPL {// } implements ICarDeliveryRepository {
         return null;
     }
 
-    public void delete(String i) {
+    public boolean delete(String i) {
         CarDelivery carDelivery = read(i);
         if (carDelivery != null) {
             this.deliveries.remove(carDelivery);
         }
+        return false;
     }
 
     // @Override

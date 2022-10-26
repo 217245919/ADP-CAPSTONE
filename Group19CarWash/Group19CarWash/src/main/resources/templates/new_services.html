@@ -161,18 +161,23 @@
         <form action="#" th:action="@{/saveservices}" th:object="${services}" method="post">
           <table class="tform">
             <tr>
-              <td>Services Package:</td>
-              <td><input type="text" id="servicespkg" name="servicespkg" required th:field="*{servicePkg}"/>
+              <td>Services ID:</td>
+              <td><input type="text" id="servicesid" name="servicessid" required th:field="*{servicesId}"/>
               </td>
             </tr>
             <tr>
-              <td>WashType ID<:</td>
+              <td>Services Package:</td>
+              <td><input type="text" id="servicespkg" name="servicespkg" required th:field="*{servicesPkg}"/>
+              </td>
+            </tr>
+            <tr>
+              <td>WashType ID:</td>
               <td><input type="text" id="washtypeid" name="washtypeid" required th:field="*{washTypeId}"/>
               </td>
             </tr>
             <tr>
               <td>Upholstery ID:</td>
-              <td><input type="text" id="upholsteryid" name="upholsteryid" required th:field="*{upholsteryid}"/>
+              <td><input type="text" id="upholsteryid" name="upholsteryid" required th:field="*{upholsteryId}"/>
             </tr>
             <tr>
               <td>Customer ID:</td>

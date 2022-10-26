@@ -11,9 +11,10 @@ CarDeliveryFactory.java
 import za.ac.cput.Group19CarWash.domain.CarDelivery;
 
 public class CarDeliveryFactory {
-    public static CarDelivery createCarDelivery(String date, String time, String customerId) {// String carDelivId,
+    public static CarDelivery createCarDelivery(String carDelivId, String date, String time, String customerId) {// String
+                                                                                                                 // carDelivId,
         CarDelivery carDelivery = new CarDelivery.Builder()
-
+                .setCarDelivId(carDelivId)
                 .setDate(date)
                 .setTime(time)
                 .setCustomerId(customerId)

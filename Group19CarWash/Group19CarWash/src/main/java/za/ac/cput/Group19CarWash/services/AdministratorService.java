@@ -3,7 +3,6 @@ package za.ac.cput.Group19CarWash.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.Group19CarWash.domain.Administrator;
 import org.springframework.stereotype.Service;
-import za.ac.cput.Group19CarWash.exception.AdministratorNotFoundException;
 import za.ac.cput.Group19CarWash.repository.administrator.IAdministratorRepository;
 
 import java.util.List;
