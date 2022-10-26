@@ -49,7 +49,7 @@ public class BookingNavController {
     public String saveBooking(@ModelAttribute("bookings") Bookings bookings)
     {bookingService.addBooking(bookings);
 
-        return "redirect:/allbookings";
+        return "redirect:/newcar";
     }
 
     @RequestMapping(value= "/edit/{id}")

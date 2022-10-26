@@ -33,7 +33,7 @@ public class ServicesController {
     @RequestMapping(value = "/saveservices", method = RequestMethod.POST)
     public String saveservices(@ModelAttribute("services") Services services) {
         servicesService.addServices(services);
-        return "redirect:/services";
+        return "redirect:/allbookings";
     }
     @RequestMapping(value = "/editservices/{id}")
     public ModelAndView showEditservices(@PathVariable(name = "id") Long id) {

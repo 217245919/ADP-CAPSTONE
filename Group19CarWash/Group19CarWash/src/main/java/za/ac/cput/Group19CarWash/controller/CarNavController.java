@@ -41,7 +41,7 @@ public class CarNavController {
     public String saveCar(@ModelAttribute("car") Car car) {
         carService.addCar(car);
 
-        return "redirect:/car";
+        return "redirect:/newservices";
     }
 
     @RequestMapping(value = "/editcar/{id}")
